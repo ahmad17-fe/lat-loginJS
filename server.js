@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const dbConfig = require('./app/config/db.config')
 
 const app = express()
 
@@ -53,6 +54,9 @@ function saveRole(name) {
 app.get("/", (req,res) => {
   res.json({message: "Wellcome to my api"})
 })
+
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
 
 const PORT = process.env.PORT||5500
 app.listen(PORT,() => {

@@ -1,5 +1,7 @@
-module.exports = {
-  HOST: "localhost",
+const config = {
+  HOST: 'localhost',
   PORT: 27017,
-  DB: "loginJWT"
+  DB: 'loginJwt'
 }
+
+module.exports = config
